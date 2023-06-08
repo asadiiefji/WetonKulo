@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3063D9A52A31845F00B17845 /* ClockCircularSlider in Resources */ = {isa = PBXBuildFile; fileRef = 3063D9A42A31845F00B17845 /* ClockCircularSlider */; };
+		3063D9A72A31853000B17845 /* SwipeCardComponent in Resources */ = {isa = PBXBuildFile; fileRef = 3063D9A62A31853000B17845 /* SwipeCardComponent */; };
 		4373B3582A3061F200600475 /* WetonKuloApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4373B3572A3061F200600475 /* WetonKuloApp.swift */; };
 		4373B35A2A3061F200600475 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4373B3592A3061F200600475 /* ContentView.swift */; };
 		4373B35C2A3061F300600475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4373B35B2A3061F300600475 /* Assets.xcassets */; };
@@ -42,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3063D9A42A31845F00B17845 /* ClockCircularSlider */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ClockCircularSlider; path = ../../../../../Downloads/MC2/ClockCircularSlider/ClockCircularSlider; sourceTree = "<group>"; };
+		3063D9A62A31853000B17845 /* SwipeCardComponent */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SwipeCardComponent; path = ../../../../../Downloads/MC2/SwipeCardComponent/SwipeCardComponent; sourceTree = "<group>"; };
 		4373B3542A3061F200600475 /* WetonKulo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WetonKulo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4373B3572A3061F200600475 /* WetonKuloApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WetonKuloApp.swift; sourceTree = "<group>"; };
 		4373B3592A3061F200600475 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -187,6 +191,8 @@
 			isa = PBXGroup;
 			children = (
 				4373B3962A30C0D200600475 /* cobaCalculateView.swift */,
+				3063D9A62A31853000B17845 /* SwipeCardComponent */,
+				3063D9A42A31845F00B17845 /* ClockCircularSlider */,
 			);
 			path = DummySoonDeleted;
 			sourceTree = "<group>";
@@ -295,8 +301,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3063D9A52A31845F00B17845 /* ClockCircularSlider in Resources */,
 				4373B35F2A3061F300600475 /* Preview Assets.xcassets in Resources */,
 				4373B35C2A3061F300600475 /* Assets.xcassets in Resources */,
+				3063D9A72A31853000B17845 /* SwipeCardComponent in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
