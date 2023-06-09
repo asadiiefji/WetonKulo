@@ -8,68 +8,72 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @ObservedObject var weton : Weton
-    @State var isModal = false
-    @State var isToggle = false
+    
+    @State var activeView: currentView
+    
+    @State private var offsetY1: CGFloat = 0
+    @State private var offsetY2: CGFloat = 0
+    @State private var isReversed = false
+    @State private var isNavigate = false
     
     let profileType: ProfileType
+    @ObservedObject var weton : Weton
     
     var body: some View {
-        ZStack {
-            
-            Text("Pick a date of birth")
-                .position(x: screenWidth / 2, y: 40)
-            
+        NavigationStack {
             VStack {
-                Text("tanggal: \(weton.getJavaDay(for: profileType == .man ? weton.dateMan : weton.dateWoman))")
+                Text("tanggal man: \( weton.dateMan, formatter: dateFormatter)")
+                Image("imgPria")
+                    .resizable()
+                    .frame(width: screenWidth * 0.55, height: screenHeight * 0.3)
                 
-                Toggle(isOn: $isToggle) {
-                    Text("Konfirmasi Data")
-                }
-                .navigationDestination(isPresented: $isToggle, destination: {
-                    OnBoardingView()
-                })
-                .padding(20)
-                .position(x: screenWidth/2, y: screenHeight * 0.7)
-            }
-            
-            Image(profileType.image)
-                .resizable()
-                .frame(width: screenWidth * 0.7, height: screenHeight * 0.4)
-            
-            Button {
-                isModal = true
-                print("before pick date")
-                print("dayMan: \(weton.dayMan)")
-                print("dayWoman: \(weton.dayWoman)")
-            } label: {
-                Text("Pick a date for \(profileType.text)")
-                    .padding(12)
+                Text("tanggal woman: \( weton.dateWoman, formatter: dateFormatter)")
+                Image("imgWanita")
+                    .resizable()
+                    .frame(width: screenWidth * 0.55, height: screenHeight * 0.3)
+                
+                Text("See Result")
+                    .padding(15)
                     .frame(width: screenWidth * 0.8)
                     .background(Color.blue)
-                    .cornerRadius(15)
                     .foregroundColor(.white)
+                    .cornerRadius(20, corners: .allCorners)
+                    .onTapGesture {
+                        print("total weton: \(weton.getTotalWeton())")
+                        isNavigate = true
+                        print("isNavigate: \(isNavigate)")
+                    }
+                    .navigationDestination(isPresented: $isNavigate) {
+                        ResultCompatibilityView(weton: weton, profileType: .man)
+                    }
+                    .navigationBarBackButtonHidden(false)
                 
             }
-            .position(x: screenWidth/2, y: screenHeight * 0.8)
-            
+            .frame(width: screenWidth, height: screenHeight)
+            .background(Image("bgGender").resizable()).ignoresSafeArea()
         }
-        .sheet(isPresented: $isModal) {
-            CalendarView(weton: weton, profileType: profileType)
-                .presentationDetents([.fraction(0.6)])
-                .transition(.move(edge: .bottom))
-                .animation(.easeInOut, value: 10)
-                .presentationCornerRadius(40)
-                .zIndex(2)
-        }
-        .animation(.spring(), value: 0)
+        
     }
-
+    
+    func startAnimation() {
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+            withAnimation(Animation.linear(duration: 1.0)) {
+                if isReversed {
+                    offsetY1 = 0
+                    offsetY2 = 50
+                } else {
+                    offsetY1 = 50
+                    offsetY2 = 0
+                }
+                isReversed.toggle()
+            }
+        }
+    }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         let weton = Weton()
-        ProfileView(weton: weton, profileType: .man)
+        ProfileView(activeView: .center, profileType: .man, weton: weton)
     }
 }

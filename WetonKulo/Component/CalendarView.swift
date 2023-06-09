@@ -12,8 +12,6 @@ struct CalendarView: View {
     var profileType: ProfileType
     
     var body: some View {
-        print("redraw calendar view")
-        print(weton.dayMan, weton.dayWoman)
         return VStack {
             
             RoundedRectangle(cornerRadius: 10)
