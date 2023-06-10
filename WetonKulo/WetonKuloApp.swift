@@ -12,7 +12,7 @@ struct WetonKuloApp: App {
     var body: some Scene {
         WindowGroup {
             let weton = Weton()
-            TipsView(weton: weton)
+            OnBoardingAppView()
         }
     }
 }

@@ -34,19 +34,19 @@ struct ProfileView: View {
                     .resizable()
                     .frame(width: screenWidth * 0.55, height: screenHeight * 0.3)
                 
-                Text("See Result")
-                    .padding(15)
-                    .frame(width: screenWidth * 0.8)
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(20, corners: .allCorners)
-                    .onTapGesture {
-                        isNavigate = true
-                    }
-                    .navigationDestination(isPresented: $isNavigate) {
-                        ResultCompatibilityView(weton: weton, profileType: .man)
-                    }
-                    .navigationBarBackButtonHidden(false)
+                
+                NavigationLink(destination: {
+                    ResultCompatibilityView(weton: weton, profileType: .man)
+                }, label: {
+                    Text("See Result")
+                        .padding(15)
+                        .frame(width: screenWidth * 0.8)
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(20, corners: .allCorners)
+                })
+                
+                
                 
             }
             .frame(width: screenWidth, height: screenHeight)

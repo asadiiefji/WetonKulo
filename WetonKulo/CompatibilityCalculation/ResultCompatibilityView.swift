@@ -53,56 +53,6 @@ struct ResultCompatibilityView: View {
             .frame(width: screenWidth, height: screenHeight)
             .background(Color("primary"))
             
-            
-            
-            
-            
-//            VStack{
-//                Text("Hello, this is the result")
-//                    .font(.system(size: 22, weight: .bold))
-//                HStack {
-//                    Text("\(weton.dateMan, formatter: dateFormatter)")
-//                        .frame(width: screenWidth/2)
-//
-//                    Text("\(weton.dateWoman, formatter: dateFormatter)")
-//                        .frame(width: screenWidth/2)
-//                }
-//
-//                HStack{
-//                    Text("5 Siklus")
-//                        .frame(width: screenWidth / 3)
-//                    Text("7 Siklus")
-//                        .frame(width: screenWidth / 3)
-//                    Text("8 Siklus")
-//                        .frame(width: screenWidth / 3)
-//                }
-//                .background(Color.orange)
-//                .foregroundColor(.black)
-//                .padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
-//
-//                HStack{
-//                    Text("\(weton.getFiveCycles().result)")
-//                        .frame(width: screenWidth / 3)
-//                    Text("\(weton.getSevenCycles().result)")
-//                        .frame(width: screenWidth / 3)
-//                    Text("\(weton.getEightCycles().result)")
-//                        .frame(width: screenWidth / 3)
-//                }
-//                .background(Color.cyan)
-//                .foregroundColor(.black)
-//
-//                HStack{
-//                    Text("\(weton.getFiveCycles().interpretation)")
-//                        .frame(width: screenWidth / 3)
-//                    Text("\(weton.getSevenCycles().interpretation)")
-//                        .frame(width: screenWidth / 3)
-//                    Text("\(weton.getEightCycles().interpretation)")
-//                        .frame(width: screenWidth / 3)
-//                }
-//                .background(Color.yellow)
-//                .foregroundColor(Color("textColor"))
-//            }
-//            .padding()
         }
     }
 }
