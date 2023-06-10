@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3090E1C02A341F7E0095E1A3 /* CompabilityTipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3090E1BF2A341F7E0095E1A3 /* CompabilityTipsView.swift */; };
+		3090E1C62A343E340095E1A3 /* Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3090E1C52A343E340095E1A3 /* Routing.swift */; };
+		3090E1C82A3448020095E1A3 /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3090E1C72A3448020095E1A3 /* ExampleView.swift */; };
+		3090E1CA2A3455060095E1A3 /* NavigationButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3090E1C92A3455060095E1A3 /* NavigationButtonStyle.swift */; };
+		3090E1CE2A3477410095E1A3 /* ClockControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3090E1CD2A3477410095E1A3 /* ClockControlView.swift */; };
+		3090E1D02A3477950095E1A3 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3090E1CF2A3477950095E1A3 /* ClockView.swift */; };
 		432347D92A331E6B00373BBC /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432347D82A331E6B00373BBC /* Data.swift */; };
 		432347DB2A331F1400373BBC /* ManView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432347DA2A331F1400373BBC /* ManView.swift */; };
 		432347DD2A331F4300373BBC /* WomanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432347DC2A331F4300373BBC /* WomanView.swift */; };
@@ -45,6 +51,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3090E1BF2A341F7E0095E1A3 /* CompabilityTipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompabilityTipsView.swift; sourceTree = "<group>"; };
+		3090E1C52A343E340095E1A3 /* Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routing.swift; sourceTree = "<group>"; };
+		3090E1C72A3448020095E1A3 /* ExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
+		3090E1C92A3455060095E1A3 /* NavigationButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButtonStyle.swift; sourceTree = "<group>"; };
+		3090E1CD2A3477410095E1A3 /* ClockControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockControlView.swift; sourceTree = "<group>"; };
+		3090E1CF2A3477950095E1A3 /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		432347D82A331E6B00373BBC /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		432347DA2A331F1400373BBC /* ManView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManView.swift; sourceTree = "<group>"; };
 		432347DC2A331F4300373BBC /* WomanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WomanView.swift; sourceTree = "<group>"; };
@@ -165,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				4373B3842A3062D400600475 /* Helpers.swift */,
+				3090E1C52A343E340095E1A3 /* Routing.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -176,6 +189,7 @@
 				4373B3882A30641600600475 /* JavaneseDate.swift */,
 				4373B38F2A30BC6300600475 /* ProfileType.swift */,
 				432347D82A331E6B00373BBC /* Data.swift */,
+				3090E1C92A3455060095E1A3 /* NavigationButtonStyle.swift */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -188,6 +202,10 @@
 				4373B38D2A30BC3700600475 /* ProfileView.swift */,
 				432347DC2A331F4300373BBC /* WomanView.swift */,
 				432347E02A33209A00373BBC /* ResultCompatibilityView.swift */,
+				3090E1BF2A341F7E0095E1A3 /* CompabilityTipsView.swift */,
+				3090E1C72A3448020095E1A3 /* ExampleView.swift */,
+				3090E1CD2A3477410095E1A3 /* ClockControlView.swift */,
+				3090E1CF2A3477950095E1A3 /* ClockView.swift */,
 			);
 			path = CompatibilityCalculation;
 			sourceTree = "<group>";
@@ -322,19 +340,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3090E1D02A3477950095E1A3 /* ClockView.swift in Sources */,
+				3090E1C62A343E340095E1A3 /* Routing.swift in Sources */,
 				4373B35A2A3061F200600475 /* ContentView.swift in Sources */,
 				4373B3852A3062D400600475 /* Helpers.swift in Sources */,
 				4373B3582A3061F200600475 /* WetonKuloApp.swift in Sources */,
 				4373B38C2A30BC2900600475 /* OnBoardingView.swift in Sources */,
+				3090E1CE2A3477410095E1A3 /* ClockControlView.swift in Sources */,
 				432347D92A331E6B00373BBC /* Data.swift in Sources */,
 				4373B3892A30641600600475 /* JavaneseDate.swift in Sources */,
+				3090E1CA2A3455060095E1A3 /* NavigationButtonStyle.swift in Sources */,
 				432347DD2A331F4300373BBC /* WomanView.swift in Sources */,
 				4373B3922A30BD1600600475 /* CalendarView.swift in Sources */,
+				3090E1C02A341F7E0095E1A3 /* CompabilityTipsView.swift in Sources */,
 				432347DB2A331F1400373BBC /* ManView.swift in Sources */,
 				432347E12A33209A00373BBC /* ResultCompatibilityView.swift in Sources */,
 				4373B38E2A30BC3700600475 /* ProfileView.swift in Sources */,
 				4373B3872A3063EF00600475 /* Weton.swift in Sources */,
 				4373B3902A30BC6300600475 /* ProfileType.swift in Sources */,
+				3090E1C82A3448020095E1A3 /* ExampleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

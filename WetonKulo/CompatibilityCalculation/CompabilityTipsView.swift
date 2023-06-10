@@ -1,13 +1,13 @@
 //
-//  ResultCompatibilityView.swift
+//  CompabilityTipsView.swift
 //  WetonKulo
 //
-//  Created by Mukhammad Miftakhul As'Adi on 09/06/23.
+//  Created by edi santoso on 10/06/23.
 //
 
 import SwiftUI
 
-struct ResultCompatibilityView: View {
+struct CompabilityTipsView: View {
     @ObservedObject var weton : Weton
     let profileType: ProfileType
     
@@ -107,7 +107,7 @@ struct ResultCompatibilityView: View {
                                         .padding(EdgeInsets(top: 100, leading: 0, bottom: 35, trailing: 0))
                                     
                                     
-                                    Text("\(weton.getEightCycles().interpretation)")
+                                    Text("\(weton.getEightCycles().tips)")
                                         .multilineTextAlignment(.leading)
                                         .frame(width: 300)
                                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
@@ -131,10 +131,6 @@ struct ResultCompatibilityView: View {
                     HStack(alignment: .bottom, spacing: 0) {
                         Spacer()
                         Button("Tips") {
-                            navigateManager.navigateTo(.card)
-                        }
-                        .buttonStyle(NavigationButtonStyle(color: Color(hue: 0.084, saturation: 0.419, brightness: 0.456)))
-                        Button("Tips") {
                             navigateManager.navigateTo(.compabilityTips)
                         }
                         .buttonStyle(NavigationButtonStyle(color: Color(hue: 0.084, saturation: 0.419, brightness: 0.456)))
@@ -146,17 +142,17 @@ struct ResultCompatibilityView: View {
                             
                             
                         )
-                        
                     }
                 }
             }.ignoresSafeArea()
-        }.navigationBarBackButtonHidden(true)
+        }
     }
 }
 
-struct ResultCompatibilityView_Previews: PreviewProvider {
+
+struct CompabilityTipsView_Previews: PreviewProvider {
     static var previews: some View {
         let weton = Weton()
-        ResultCompatibilityView(weton: weton, profileType: .man)
+        CompabilityTipsView(weton: weton, profileType: .man)
     }
 }
