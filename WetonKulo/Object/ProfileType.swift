@@ -31,9 +31,9 @@ enum ProfileType: CaseIterable {
     var text: String {
         switch self {
         case .man:
-            return "Cowo nih"
+            return "Pasangan Pria"
         case .woman:
-            return "Ciwiciwii"
+            return "Pasangan Wanita"
         }
     }
     
