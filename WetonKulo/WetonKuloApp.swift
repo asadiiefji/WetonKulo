@@ -11,7 +11,8 @@ import SwiftUI
 struct WetonKuloApp: App {
     var body: some Scene {
         WindowGroup {
-            OnBoardingView()
+            let weton = Weton()
+            TipsView(weton: weton)
         }
     }
 }

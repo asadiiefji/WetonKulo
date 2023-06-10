@@ -11,6 +11,8 @@
 		432347DB2A331F1400373BBC /* ManView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432347DA2A331F1400373BBC /* ManView.swift */; };
 		432347DD2A331F4300373BBC /* WomanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432347DC2A331F4300373BBC /* WomanView.swift */; };
 		432347E12A33209A00373BBC /* ResultCompatibilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432347E02A33209A00373BBC /* ResultCompatibilityView.swift */; };
+		432347E32A3352F300373BBC /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432347E22A3352F300373BBC /* TipsView.swift */; };
+		432347E52A3461E600373BBC /* DisclosureGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432347E42A3461E600373BBC /* DisclosureGroupView.swift */; };
 		4373B3582A3061F200600475 /* WetonKuloApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4373B3572A3061F200600475 /* WetonKuloApp.swift */; };
 		4373B35A2A3061F200600475 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4373B3592A3061F200600475 /* ContentView.swift */; };
 		4373B35C2A3061F300600475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4373B35B2A3061F300600475 /* Assets.xcassets */; };
@@ -49,6 +51,8 @@
 		432347DA2A331F1400373BBC /* ManView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManView.swift; sourceTree = "<group>"; };
 		432347DC2A331F4300373BBC /* WomanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WomanView.swift; sourceTree = "<group>"; };
 		432347E02A33209A00373BBC /* ResultCompatibilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCompatibilityView.swift; sourceTree = "<group>"; };
+		432347E22A3352F300373BBC /* TipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsView.swift; sourceTree = "<group>"; };
+		432347E42A3461E600373BBC /* DisclosureGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclosureGroupView.swift; sourceTree = "<group>"; };
 		4373B3542A3061F200600475 /* WetonKulo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WetonKulo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4373B3572A3061F200600475 /* WetonKuloApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WetonKuloApp.swift; sourceTree = "<group>"; };
 		4373B3592A3061F200600475 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -157,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				4373B3912A30BD1600600475 /* CalendarView.swift */,
+				432347E42A3461E600373BBC /* DisclosureGroupView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 				4373B38D2A30BC3700600475 /* ProfileView.swift */,
 				432347DC2A331F4300373BBC /* WomanView.swift */,
 				432347E02A33209A00373BBC /* ResultCompatibilityView.swift */,
+				432347E22A3352F300373BBC /* TipsView.swift */,
 			);
 			path = CompatibilityCalculation;
 			sourceTree = "<group>";
@@ -326,6 +332,7 @@
 				4373B3852A3062D400600475 /* Helpers.swift in Sources */,
 				4373B3582A3061F200600475 /* WetonKuloApp.swift in Sources */,
 				4373B38C2A30BC2900600475 /* OnBoardingView.swift in Sources */,
+				432347E32A3352F300373BBC /* TipsView.swift in Sources */,
 				432347D92A331E6B00373BBC /* Data.swift in Sources */,
 				4373B3892A30641600600475 /* JavaneseDate.swift in Sources */,
 				432347DD2A331F4300373BBC /* WomanView.swift in Sources */,
@@ -335,6 +342,7 @@
 				4373B38E2A30BC3700600475 /* ProfileView.swift in Sources */,
 				4373B3872A3063EF00600475 /* Weton.swift in Sources */,
 				4373B3902A30BC6300600475 /* ProfileType.swift in Sources */,
+				432347E52A3461E600373BBC /* DisclosureGroupView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

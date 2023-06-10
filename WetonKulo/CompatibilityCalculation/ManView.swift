@@ -31,30 +31,22 @@ struct ManView: View {
             Toggle(isOn: $weton.isMaghribMan ) {
                 Text("Lahir setelah maghrib?")
             }
+            
             .onChange(of: weton.isMaghribMan ) { newValue in
                 if newValue {
                     if let updatedDate = Calendar.current.date(byAdding: .day, value: 1, to: weton.dateMan) {
                         weton.dateMan = updatedDate
-                        print("dateMan: \(weton.dateMan)")
                     }
                 }
                 else {
                     if let updatedDate = Calendar.current.date(byAdding: .day, value: -1, to: weton.dateMan) {
                         weton.dateMan = updatedDate
-                        print("dateMan: \(weton.dateMan)")
                     }
                 }
             }
             .padding(20)
-            
-            
-            
             Button {
                 isModal = true
-                print("isMaghribMan: \(weton.isMaghribMan)")
-                print("isMaghribWoman: \(weton.isMaghribWoman)")
-                
-                
             } label: {
                 Text("Pick a date for \(profileType.text)")
                     .padding(12)
@@ -64,6 +56,7 @@ struct ManView: View {
                     .foregroundColor(.white)
             }
         }
+        .foregroundColor(Color("textColor"))
         .sheet(isPresented: $isModal) {
             CalendarView(weton: weton, profileType: profileType)
                 .presentationDetents([.fraction(0.6)])
@@ -71,6 +64,7 @@ struct ManView: View {
                 .animation(.easeInOut, value: 10)
                 .presentationCornerRadius(40)
                 .zIndex(2)
+                .background(Color("secondary"))
         }
         .animation(.spring(), value: 0)
         .frame(width: screenWidth, height: screenHeight)

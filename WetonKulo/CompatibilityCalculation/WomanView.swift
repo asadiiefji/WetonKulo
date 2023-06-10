@@ -34,13 +34,11 @@ struct WomanView: View {
                 if newValue {
                     if let updatedDate = Calendar.current.date(byAdding: .day, value: 1, to: weton.dateWoman) {
                         weton.dateWoman = updatedDate
-                        print("dateMan: \(weton.dateWoman)")
                     }
                 }
                 else {
                     if let updatedDate = Calendar.current.date(byAdding: .day, value: -1, to: weton.dateWoman) {
                         weton.dateWoman = updatedDate
-                        print("dateMan: \(weton.dateWoman)")
                     }
                 }
             }
@@ -48,9 +46,6 @@ struct WomanView: View {
             
             Button {
                 isModal = true
-                print("isMaghribMan: \(weton.isMaghribMan)")
-                print("isMaghribWoman: \(weton.isMaghribWoman)")
-                
             } label: {
                 Text("Pick a date for \(profileType.text)")
                     .padding(12)
@@ -60,12 +55,14 @@ struct WomanView: View {
                     .foregroundColor(.white)
             }
         }
+        .foregroundColor(Color("textColor"))
         .sheet(isPresented: $isModal) {
             CalendarView(weton: weton, profileType: profileType)
                 .presentationDetents([.fraction(0.6)])
                 .transition(.move(edge: .bottom))
                 .animation(.easeInOut, value: 10)
                 .presentationCornerRadius(40)
+                .background(Color("secondary"))
                 .zIndex(2)
         }
         .animation(.spring(), value: 0)
