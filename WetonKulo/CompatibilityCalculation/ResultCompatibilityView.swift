@@ -19,6 +19,8 @@ struct ResultCompatibilityView: View {
                     .font(.system(size: 26, weight: .bold))
                     .padding(EdgeInsets(top: 60, leading: 0, bottom: 30, trailing: 0))
                 
+                
+                
                 Image("imgResult")
                     .resizable()
                     .frame(width: screenWidth, height: screenHeight * 0.65)

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		309EB80C2A36FCDE00B02C8A /* HasilKecocokan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309EB80B2A36FCDE00B02C8A /* HasilKecocokan.swift */; };
+		309EB80E2A36FCF200B02C8A /* ModelHasilKecocokan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309EB80D2A36FCF200B02C8A /* ModelHasilKecocokan.swift */; };
+		309EB8102A36FD0800B02C8A /* ModelDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309EB80F2A36FD0800B02C8A /* ModelDetailView.swift */; };
+		309EB8122A36FD2500B02C8A /* ClockControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309EB8112A36FD2500B02C8A /* ClockControlView.swift */; };
+		309EB8142A36FD3400B02C8A /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309EB8132A36FD3400B02C8A /* ClockView.swift */; };
 		432347D92A331E6B00373BBC /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432347D82A331E6B00373BBC /* Data.swift */; };
 		432347DB2A331F1400373BBC /* ManView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432347DA2A331F1400373BBC /* ManView.swift */; };
 		432347DD2A331F4300373BBC /* WomanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432347DC2A331F4300373BBC /* WomanView.swift */; };
@@ -48,6 +53,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		309EB80B2A36FCDE00B02C8A /* HasilKecocokan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasilKecocokan.swift; sourceTree = "<group>"; };
+		309EB80D2A36FCF200B02C8A /* ModelHasilKecocokan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelHasilKecocokan.swift; sourceTree = "<group>"; };
+		309EB80F2A36FD0800B02C8A /* ModelDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDetailView.swift; sourceTree = "<group>"; };
+		309EB8112A36FD2500B02C8A /* ClockControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockControlView.swift; sourceTree = "<group>"; };
+		309EB8132A36FD3400B02C8A /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		432347D82A331E6B00373BBC /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		432347DA2A331F1400373BBC /* ManView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManView.swift; sourceTree = "<group>"; };
 		432347DC2A331F4300373BBC /* WomanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WomanView.swift; sourceTree = "<group>"; };
@@ -99,6 +109,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		309EB80A2A36FCA700B02C8A /* Hasil Kecocokan */ = {
+			isa = PBXGroup;
+			children = (
+				309EB80B2A36FCDE00B02C8A /* HasilKecocokan.swift */,
+				309EB80D2A36FCF200B02C8A /* ModelHasilKecocokan.swift */,
+				309EB80F2A36FD0800B02C8A /* ModelDetailView.swift */,
+				309EB8112A36FD2500B02C8A /* ClockControlView.swift */,
+				309EB8132A36FD3400B02C8A /* ClockView.swift */,
+			);
+			path = "Hasil Kecocokan";
+			sourceTree = "<group>";
+		};
 		432347E62A3472CE00373BBC /* OnBoarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +154,7 @@
 			children = (
 				432347E62A3472CE00373BBC /* OnBoarding */,
 				4373B38A2A30BBEE00600475 /* CompatibilityCalculation */,
+				309EB80A2A36FCA700B02C8A /* Hasil Kecocokan */,
 				4373B3832A3062AF00600475 /* Object */,
 				4373B3822A30628D00600475 /* Helper */,
 				4373B3812A30621400600475 /* Component */,
@@ -339,9 +362,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				309EB80C2A36FCDE00B02C8A /* HasilKecocokan.swift in Sources */,
 				4373B35A2A3061F200600475 /* ContentView.swift in Sources */,
 				432347E82A3472E400373BBC /* OnBoardingAppView.swift in Sources */,
 				4373B3852A3062D400600475 /* Helpers.swift in Sources */,
+				309EB8142A36FD3400B02C8A /* ClockView.swift in Sources */,
+				309EB8102A36FD0800B02C8A /* ModelDetailView.swift in Sources */,
 				4373B3582A3061F200600475 /* WetonKuloApp.swift in Sources */,
 				4373B38C2A30BC2900600475 /* OnBoardingView.swift in Sources */,
 				432347E32A3352F300373BBC /* TipsView.swift in Sources */,
@@ -350,6 +376,8 @@
 				432347DD2A331F4300373BBC /* WomanView.swift in Sources */,
 				4373B3922A30BD1600600475 /* CalendarView.swift in Sources */,
 				432347DB2A331F1400373BBC /* ManView.swift in Sources */,
+				309EB8122A36FD2500B02C8A /* ClockControlView.swift in Sources */,
+				309EB80E2A36FCF200B02C8A /* ModelHasilKecocokan.swift in Sources */,
 				432347E12A33209A00373BBC /* ResultCompatibilityView.swift in Sources */,
 				4373B38E2A30BC3700600475 /* ProfileView.swift in Sources */,
 				4373B3872A3063EF00600475 /* Weton.swift in Sources */,

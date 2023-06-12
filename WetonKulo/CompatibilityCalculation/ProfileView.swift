@@ -36,7 +36,7 @@ struct ProfileView: View {
                 
                 
                 NavigationLink(destination: {
-                    ResultCompatibilityView(weton: weton, profileType: .man)
+                    HasilKecocokan(categoryName: "Hasil Kecocokan")
                 }, label: {
                     Text("See Result")
                         .padding(15)

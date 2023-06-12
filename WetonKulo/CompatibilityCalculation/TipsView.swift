@@ -78,6 +78,19 @@ struct TipsView: View {
                         )
                         .cornerRadius(10, corners: .allCorners)
                         
+                        
+                        NavigationLink(destination: {
+                            HasilKecocokan(categoryName: "Top Movie").navigationBarBackButtonHidden(true)
+                        }, label: {
+                            Text("< Hasil")
+                                .font(.title3)
+                                
+                                .fontWeight(.semibold)
+                                .foregroundColor(Color("textColor"))
+                                .cornerRadius(20, corners: .allCorners)
+                        })
+                        .padding(20)
+                        .offset(x: -120, y: -530)
                     }
                     
                     
