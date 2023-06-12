@@ -26,6 +26,7 @@ struct TipsView: View {
                     Text("Tips")
                         .font(.system(size: 26, weight: .bold))
                         .padding(EdgeInsets(top: 60, leading: 0, bottom: 30, trailing: 0))
+                        .foregroundColor(Color("textColor"))
                     
                     Image("imgTips")
                         .resizable()
@@ -47,6 +48,7 @@ struct TipsView: View {
                             )
                         )
                         .cornerRadius(10, corners: .allCorners)
+                        .foregroundColor(Color("textColor"))
                         
                         DisclosureGroup(
                             "label",
@@ -62,6 +64,7 @@ struct TipsView: View {
                             )
                         )
                         .cornerRadius(10, corners: .allCorners)
+                        .foregroundColor(Color("textColor"))
                         
                         DisclosureGroup(
                             "label",
@@ -77,6 +80,7 @@ struct TipsView: View {
                             )
                         )
                         .cornerRadius(10, corners: .allCorners)
+                        .foregroundColor(Color("textColor"))
                         
                     }
                     

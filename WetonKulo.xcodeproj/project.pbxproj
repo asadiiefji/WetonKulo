@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3090E1C02A341F7E0095E1A3 /* CompabilityTipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3090E1BF2A341F7E0095E1A3 /* CompabilityTipsView.swift */; };
 		3090E1C62A343E340095E1A3 /* Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3090E1C52A343E340095E1A3 /* Routing.swift */; };
-		3090E1C82A3448020095E1A3 /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3090E1C72A3448020095E1A3 /* ExampleView.swift */; };
 		3090E1CA2A3455060095E1A3 /* NavigationButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3090E1C92A3455060095E1A3 /* NavigationButtonStyle.swift */; };
 		3090E1CE2A3477410095E1A3 /* ClockControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3090E1CD2A3477410095E1A3 /* ClockControlView.swift */; };
 		3090E1D02A3477950095E1A3 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3090E1CF2A3477950095E1A3 /* ClockView.swift */; };
+		43218C872A35C1B700D5F189 /* GoodDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43218C862A35C1B700D5F189 /* GoodDateView.swift */; };
 		432347D92A331E6B00373BBC /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432347D82A331E6B00373BBC /* Data.swift */; };
 		432347DB2A331F1400373BBC /* ManView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432347DA2A331F1400373BBC /* ManView.swift */; };
 		432347DD2A331F4300373BBC /* WomanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432347DC2A331F4300373BBC /* WomanView.swift */; };
@@ -20,6 +19,8 @@
 		432347E32A3352F300373BBC /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432347E22A3352F300373BBC /* TipsView.swift */; };
 		432347E52A3461E600373BBC /* DisclosureGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432347E42A3461E600373BBC /* DisclosureGroupView.swift */; };
 		432347E82A3472E400373BBC /* OnBoardingAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432347E72A3472E400373BBC /* OnBoardingAppView.swift */; };
+		432347EA2A34D5E000373BBC /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432347E92A34D5E000373BBC /* DashboardView.swift */; };
+		432347EC2A34D6CA00373BBC /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432347EB2A34D6CA00373BBC /* DisclaimerView.swift */; };
 		4373B3582A3061F200600475 /* WetonKuloApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4373B3572A3061F200600475 /* WetonKuloApp.swift */; };
 		4373B35A2A3061F200600475 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4373B3592A3061F200600475 /* ContentView.swift */; };
 		4373B35C2A3061F300600475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4373B35B2A3061F300600475 /* Assets.xcassets */; };
@@ -54,12 +55,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3090E1BF2A341F7E0095E1A3 /* CompabilityTipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompabilityTipsView.swift; sourceTree = "<group>"; };
 		3090E1C52A343E340095E1A3 /* Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routing.swift; sourceTree = "<group>"; };
-		3090E1C72A3448020095E1A3 /* ExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
 		3090E1C92A3455060095E1A3 /* NavigationButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButtonStyle.swift; sourceTree = "<group>"; };
 		3090E1CD2A3477410095E1A3 /* ClockControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockControlView.swift; sourceTree = "<group>"; };
 		3090E1CF2A3477950095E1A3 /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
+		43218C862A35C1B700D5F189 /* GoodDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodDateView.swift; sourceTree = "<group>"; };
 		432347D82A331E6B00373BBC /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		432347DA2A331F1400373BBC /* ManView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManView.swift; sourceTree = "<group>"; };
 		432347DC2A331F4300373BBC /* WomanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WomanView.swift; sourceTree = "<group>"; };
@@ -67,6 +67,8 @@
 		432347E22A3352F300373BBC /* TipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsView.swift; sourceTree = "<group>"; };
 		432347E42A3461E600373BBC /* DisclosureGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclosureGroupView.swift; sourceTree = "<group>"; };
 		432347E72A3472E400373BBC /* OnBoardingAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingAppView.swift; sourceTree = "<group>"; };
+		432347E92A34D5E000373BBC /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		432347EB2A34D6CA00373BBC /* DisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerView.swift; sourceTree = "<group>"; };
 		4373B3542A3061F200600475 /* WetonKulo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WetonKulo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4373B3572A3061F200600475 /* WetonKuloApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WetonKuloApp.swift; sourceTree = "<group>"; };
 		4373B3592A3061F200600475 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -111,9 +113,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43218C852A35C19700D5F189 /* GoodDate */ = {
+			isa = PBXGroup;
+			children = (
+				43218C862A35C1B700D5F189 /* GoodDateView.swift */,
+			);
+			path = GoodDate;
+			sourceTree = "<group>";
+		};
 		432347E62A3472CE00373BBC /* OnBoarding */ = {
 			isa = PBXGroup;
 			children = (
+				432347E92A34D5E000373BBC /* DashboardView.swift */,
+				432347EB2A34D6CA00373BBC /* DisclaimerView.swift */,
 				432347E72A3472E400373BBC /* OnBoardingAppView.swift */,
 			);
 			path = OnBoarding;
@@ -142,13 +154,14 @@
 		4373B3562A3061F200600475 /* WetonKulo */ = {
 			isa = PBXGroup;
 			children = (
+				4373B3572A3061F200600475 /* WetonKuloApp.swift */,
+				4373B3592A3061F200600475 /* ContentView.swift */,
+				43218C852A35C19700D5F189 /* GoodDate */,
 				432347E62A3472CE00373BBC /* OnBoarding */,
 				4373B38A2A30BBEE00600475 /* CompatibilityCalculation */,
 				4373B3832A3062AF00600475 /* Object */,
 				4373B3822A30628D00600475 /* Helper */,
 				4373B3812A30621400600475 /* Component */,
-				4373B3572A3061F200600475 /* WetonKuloApp.swift */,
-				4373B3592A3061F200600475 /* ContentView.swift */,
 				4373B35B2A3061F300600475 /* Assets.xcassets */,
 				4373B35D2A3061F300600475 /* Preview Content */,
 			);
@@ -218,8 +231,6 @@
 				4373B38D2A30BC3700600475 /* ProfileView.swift */,
 				432347DC2A331F4300373BBC /* WomanView.swift */,
 				432347E02A33209A00373BBC /* ResultCompatibilityView.swift */,
-				3090E1BF2A341F7E0095E1A3 /* CompabilityTipsView.swift */,
-				3090E1C72A3448020095E1A3 /* ExampleView.swift */,
 				3090E1CD2A3477410095E1A3 /* ClockControlView.swift */,
 				3090E1CF2A3477950095E1A3 /* ClockView.swift */,
 				432347E22A3352F300373BBC /* TipsView.swift */,
@@ -363,6 +374,8 @@
 				432347E82A3472E400373BBC /* OnBoardingAppView.swift in Sources */,
 				4373B3852A3062D400600475 /* Helpers.swift in Sources */,
 				4373B3582A3061F200600475 /* WetonKuloApp.swift in Sources */,
+				432347EC2A34D6CA00373BBC /* DisclaimerView.swift in Sources */,
+				43218C872A35C1B700D5F189 /* GoodDateView.swift in Sources */,
 				4373B38C2A30BC2900600475 /* OnBoardingView.swift in Sources */,
 				3090E1CE2A3477410095E1A3 /* ClockControlView.swift in Sources */,
 				432347E32A3352F300373BBC /* TipsView.swift in Sources */,
@@ -371,13 +384,12 @@
 				3090E1CA2A3455060095E1A3 /* NavigationButtonStyle.swift in Sources */,
 				432347DD2A331F4300373BBC /* WomanView.swift in Sources */,
 				4373B3922A30BD1600600475 /* CalendarView.swift in Sources */,
-				3090E1C02A341F7E0095E1A3 /* CompabilityTipsView.swift in Sources */,
 				432347DB2A331F1400373BBC /* ManView.swift in Sources */,
 				432347E12A33209A00373BBC /* ResultCompatibilityView.swift in Sources */,
+				432347EA2A34D5E000373BBC /* DashboardView.swift in Sources */,
 				4373B38E2A30BC3700600475 /* ProfileView.swift in Sources */,
 				4373B3872A3063EF00600475 /* Weton.swift in Sources */,
 				4373B3902A30BC6300600475 /* ProfileType.swift in Sources */,
-				3090E1C82A3448020095E1A3 /* ExampleView.swift in Sources */,
 				432347E52A3461E600373BBC /* DisclosureGroupView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

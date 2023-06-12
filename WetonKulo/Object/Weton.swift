@@ -10,6 +10,8 @@ import Foundation
 
 class Weton: ObservableObject {
 
+    @Published var currentDateMan = Date()
+    @Published var currentDateWoman = Date()
     @Published var dateMan = Date()
     @Published var dateWoman = Date()
     @Published var fullDateMan = Date()
@@ -18,6 +20,7 @@ class Weton: ObservableObject {
     @Published var dayWoman = Date()
     @Published var isMaghribMan = false
     @Published var isMaghribWoman = false
+    
     
     let javaDay = ["Pahing", "Pon", "Wage", "Kliwon", "Legi"]
     
@@ -37,6 +40,14 @@ class Weton: ObservableObject {
         "Thursday": 8,
         "Friday": 6,
         "Saturday": 9
+    ]
+    
+    let goodDates: [DatabaseGoodDates] = [
+        DatabaseGoodDates(result: "Pati", interpretation: "Hasil yang didapat adalah ‘Pati’ yang memiliki arti ‘Mati’. Kamu dan pasanganmu jika menikah pada tanggal ini akan mengalami musibah kematian baik salah satu diantara kedua calon atau keluarganya."),
+        DatabaseGoodDates(result: "Sandang", interpretation: "Hasil yang didapat adalah ‘Sandang’ atau pakaian yang memiliki arti ‘Bagus’. Kamu dan pasanganmu jika menikah pada tanggal ini akan dilimpahkan rejeki dan kebahagiaan."),
+        DatabaseGoodDates(result: "Pangan", interpretation: "Hasil yang didapat adalah ‘Pangan’ atau makanan yang memiliki arti ‘Bagus’. Kamu dan pasanganmu jika menikah pada tanggal ini akan diberi kemudahan dalam memperoleh rezeki, dan ketika terjadi pertengkaran di dalam rumah tangga tidak akan bercerai."),
+        DatabaseGoodDates(result: "Papan", interpretation: "Hasil yang didapat adalah ‘Papan’ atau rumah yang memiliki arti ‘Bagus dan dianjurkan’. Kamu dan pasanganmu jika menikah pada tanggal ini akan terus memperoleh rejeki di dalam rumah yang kalian tempati."),
+        DatabaseGoodDates(result: "Lara", interpretation: "Hasil yang didapat adalah ‘Lara’ yang memiliki arti ‘Musibah’. Kamu dan pasanganmu jika menikah pada tanggal ini akan mengalami musibah hingga perceraian.")
     ]
     
     let fiveCycles: [DatabaseFiveCycle] = [
@@ -67,6 +78,14 @@ class Weton: ObservableObject {
         DatabaseEightCycle(result: "Padu", interpretation: "Bagaikan perang tanpa henti, kamu dan pasanganmu dipercaya akan sering mengalami masalah pertengkaran dalam kehidupan rumah tanggamu karena masalah sepele dan terdapat kemungkinan untuk berpisah.", tips: "Kamu dan pasanganmu perlu menetapkan hari baik untuk menikah."),
         DatabaseEightCycle(result: "Sujanan", interpretation: "Bagai sebuah gelombang yang menghantam pantai, kamu dan pasanganmu nanti dipercaya akan menghadapi kehidupan yang akan diselimuti dengan perselingkuhan maupun suatu pertengkaran yang disebabkan karena pihak laki-laki maupun pihak perempuan yang berselingkuh.", tips: "Kamu dan pasanganmu tidak boleh melanjutkan ke jenjang pernikahan karena dipercaya rumah tanggamu akan berakhir.")
     ]
+    
+    func shouldHighlightDay(for date: Date) -> Bool {
+        let day = Calendar.current.component(.weekday, from: date)
+        let weekday = Calendar.current.weekdaySymbols[day - 1]
+            let javaDay = getJavaDay(for: currentDateMan)
+            
+            return javaDay == "Pahing" && weekday == "Thursday"
+        }
     
     func getDayValue(for date: Date) -> Int {
         let day = Calendar.current.component(.weekday, from: date)
@@ -113,6 +132,11 @@ class Weton: ObservableObject {
     func getEightCycles() -> DatabaseEightCycle {
         let index = getTotalWeton() % 8
         return eightCycles[index]
+    }
+    
+    func getGoodDates() -> DatabaseGoodDates {
+        let index = getWetonMan() + 0 % 5
+        return goodDates[index]
     }
     
 }

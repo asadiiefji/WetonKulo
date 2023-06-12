@@ -139,7 +139,7 @@ struct ResultCompatibilityView: View {
                         }
                         .buttonStyle(NavigationButtonStyle(color: Color(hue: 0.084, saturation: 0.419, brightness: 0.456)))
                         NavigationLink(
-                            destination: CompabilityTipsView(weton: weton, profileType: .man).navigationBarBackButtonHidden(true),
+                            destination: TipsView(weton: weton).navigationBarBackButtonHidden(false),
                             tag: .compabilityTips,
                             selection: $navigateManager.currentView,
                             label: {EmptyView()}
@@ -150,7 +150,7 @@ struct ResultCompatibilityView: View {
                     }
                 }
             }.ignoresSafeArea()
-        }.navigationBarBackButtonHidden(true)
+        }.navigationBarBackButtonHidden(false)
     }
 }
 
