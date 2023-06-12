@@ -21,36 +21,65 @@ struct ProfileView: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
-                Text("tanggal man: \( weton.dateMan, formatter: dateFormatter)")
-                    .foregroundColor(Color("textColor"))
-                Image("imgPria")
-                    .resizable()
-                    .frame(width: screenWidth * 0.55, height: screenHeight * 0.3)
+            ZStack {
                 
-                Text("tanggal woman: \( weton.dateWoman, formatter: dateFormatter)")
-                    .foregroundColor(Color("textColor"))
-                Image("imgWanita")
-                    .resizable()
-                    .frame(width: screenWidth * 0.55, height: screenHeight * 0.3)
+                
+                VStack {
+                    Text("tanggal man: \( weton.dateMan, formatter: dateFormatter)")
+                        .foregroundColor(Color("textColor"))
+                }
+                .frame(width: screenWidth, height: screenHeight/2)
+                .background(
+                    (weton.isMaghribMan == true) ?
+                    Image("NightCowo").resizable() :
+                        Image("DayCowo").resizable()
+                )
+                .position(x: screenWidth/2, y: screenHeight * 0.25)
+                
+                VStack {
+                    Text("tanggal woman: \( weton.dateWoman, formatter: dateFormatter)")
+                        .foregroundColor(Color("textColor"))
+                }
+                .frame(width: screenWidth, height: screenHeight/2)
+                .background(
+                    (weton.isMaghribWoman == true) ?
+                    Image("NightCewe").resizable() :
+                        Image("DayCewe").resizable()
+                )
+                .position(x: screenWidth/2, y: screenHeight * 0.75)
                 
                 
                 NavigationLink(destination: {
                     HasilKecocokan(categoryName: "Hasil Kecocokan")
                 }, label: {
-                    Text("See Result")
+//                    Text("See Result")
+                    Text( (weton.dateMan.description.components(separatedBy: " ")[0] != weton.currentDateMan.description.components(separatedBy: " ")[0] && weton.dateWoman.description.components(separatedBy: " ")[0] != weton.currentDateWoman.description.components(separatedBy: " ")[0] )  ? "See Result" : "Tanggal Lahir Belum Terpilih")
+                    
+                    
+                        .font(.system(size: 18, weight: .semibold))
                         .padding(15)
                         .frame(width: screenWidth * 0.8)
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(20, corners: .allCorners)
+                        .background(Color("primary").opacity(0.4))
+                        .cornerRadius(30, corners: .allCorners)
+                        .foregroundColor(Color("tertiary"))
+                    
+                    
+                    
                 })
+                .disabled((weton.dateMan.description.components(separatedBy: " ")[0] != weton.currentDateMan.description.components(separatedBy: " ")[0] && weton.dateWoman.description.components(separatedBy: " ")[0] != weton.currentDateWoman.description.components(separatedBy: " ")[0] ) ? false : true)
+                .position(x: screenWidth / 2, y: screenHeight * 0.93)
                 
                 
                 
             }
             .frame(width: screenWidth, height: screenHeight)
-            .background(Image("bgGender").resizable()).ignoresSafeArea()
+//            .background(
+//                (weton.isMaghribMan == true) ?
+//                Image("NightAtas").resizable() :
+//                    Image("DayAtas").resizable()
+//            )
+            .ignoresSafeArea()
+//            .background(Image("bgGender").resizable()).ignoresSafeArea()
         }
         
     }

@@ -12,7 +12,8 @@ struct WetonKuloApp: App {
     var body: some Scene {
         WindowGroup {
             let weton = Weton()
-            OnBoardingAppView()
+//            GoodDateView(weton: weton, profileType: .man)
+            DashboardView()
         }
     }
 }
