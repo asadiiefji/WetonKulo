@@ -30,7 +30,7 @@ struct ClockControlView: View {
                 }
             ZStack {
                
-//                OutBorderCircle()
+                OutBorderCircle()
                 Circle()
                     .trim(from: minimumValue/totalValue, to: maximumValue/totalValue)
                     .stroke(
@@ -43,8 +43,8 @@ struct ClockControlView: View {
                         style: StrokeStyle(lineWidth: 8, lineCap: .round)
                         
                     )
-                    .frame(width: radius * 5, height: radius * 5)
-                    .rotationEffect(.degrees(-180))
+                    .frame(width: radius * 2, height: radius * 2)
+                    .rotationEffect(.degrees(-190))
                 
                 Group {
                     Rectangle()

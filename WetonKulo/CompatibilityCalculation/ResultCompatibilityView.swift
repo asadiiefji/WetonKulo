@@ -38,6 +38,7 @@ struct ResultCompatibilityView: View {
                             .cornerRadius(20, corners: .allCorners)
                             .foregroundColor(Color("textColor"))
                     }
+<<<<<<< HEAD
                     Button {
                         //
                     } label: {
@@ -56,6 +57,31 @@ struct ResultCompatibilityView: View {
             .background(Color("primary"))
             
         }
+=======
+                    HStack(alignment: .bottom, spacing: 0) {
+                        Spacer()
+                        Button("Tips") {
+                            navigateManager.navigateTo(.card)
+                        }
+                        .buttonStyle(NavigationButtonStyle(color: Color(hue: 0.084, saturation: 0.419, brightness: 0.456)))
+                        Button("Tips") {
+                            navigateManager.navigateTo(.compabilityTips)
+                        }
+                        .buttonStyle(NavigationButtonStyle(color: Color(hue: 0.084, saturation: 0.419, brightness: 0.456)))
+                        NavigationLink(
+                            destination: CompabilityTipsView(weton: weton, profileType: .man).navigationBarBackButtonHidden(true),
+                            tag: .compabilityTips,
+                            selection: $navigateManager.currentView,
+                            label: {EmptyView()}
+                            
+                            
+                        )
+                        
+                    }
+                }
+            }.ignoresSafeArea()
+        }.navigationBarBackButtonHidden(true)
+>>>>>>> parent of 9a98238 (add (dashboardView, disclaimerView, goodDateView, asset background) update (manview, womanview, tipsview, resultview, profileview, calendarview, data object, weton object))
     }
 }
 
