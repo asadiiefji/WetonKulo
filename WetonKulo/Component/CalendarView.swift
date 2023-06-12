@@ -21,12 +21,12 @@ struct CalendarView: View {
                 }
             } label: {
                 Image(systemName: "x.circle")
-                .font(.system(size: 36, weight: .regular))
-                .foregroundColor(Color("tertiary"))
+                    .font(.system(size: 36, weight: .regular))
+                    .foregroundColor(Color("tertiary"))
             }
             .position(x: 40, y: 70)
             .zIndex(2)
-
+            
             
             VStack {
                 
@@ -50,11 +50,11 @@ struct CalendarView: View {
                     .padding(.vertical, 10)
                     .padding(.horizontal, 20)
                 
-    //            Text("weton pria: \(weton.getWetonMan())")
-    //            Text("weton wanita: \(weton.getWetonWoman())")
+                //            Text("weton pria: \(weton.getWetonMan())")
+                //            Text("weton wanita: \(weton.getWetonWoman())")
             }
             .frame(width: screenWidth, height: screenHeight * 0.6)
-        .background(Color("secondary"))
+            .background(Color("secondary"))
         }
         
     }

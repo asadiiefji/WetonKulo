@@ -7,6 +7,13 @@
 
 import Foundation
 
+struct DatabaseGoodDates: Hashable, Identifiable {
+    // MARK: properties
+    let id: UUID = UUID()
+    let result: String
+    let interpretation: String
+}
+
 struct DatabaseFiveCycle: Hashable, Identifiable {
     // MARK: properties
     let id: UUID = UUID()
@@ -35,5 +42,4 @@ enum currentView {
     case center
     case top
     case bottom
-    
 }
