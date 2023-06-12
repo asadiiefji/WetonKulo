@@ -11,13 +11,17 @@ struct ManView: View {
     @State var activeView: currentView
     @ObservedObject var weton: Weton
     @State var isModal = false
+<<<<<<< HEAD
     @State var clockValue: CGFloat = 0.0
     @State var circleColor: Color = .orange
+=======
+>>>>>>> parent of 9a98238 (add (dashboardView, disclaimerView, goodDateView, asset background) update (manview, womanview, tipsview, resultview, profileview, calendarview, data object, weton object))
     
     let profileType: ProfileType
     
     var body: some View {
         VStack {
+<<<<<<< HEAD
             Text("Pilih Waktu Lahir")
                 .font(.title2)
                 .fontWeight(.semibold)
@@ -72,10 +76,35 @@ struct ManView: View {
                             .font(.system(size: 20))
                             .bold()
                             .foregroundColor(ColorConstant.textColorPrimary)
+=======
+            Text("Pick a date of birth")
+            Text("tanggal: \((profileType == .man ) ? weton.dateMan : weton.dateWoman, formatter: dateFormatter)")
+                .padding(20)
+            
+            Image(profileType.image)
+                .resizable()
+                .frame(width: screenWidth * 0.7, height: screenHeight * 0.4)
+                .padding()
+            
+            Toggle(isOn: $weton.isMaghribMan ) {
+                Text("Lahir setelah maghrib?")
+            }
+            
+            .onChange(of: weton.isMaghribMan ) { newValue in
+                if newValue {
+                    if let updatedDate = Calendar.current.date(byAdding: .day, value: 1, to: weton.dateMan) {
+                        weton.dateMan = updatedDate
+                    }
+                }
+                else {
+                    if let updatedDate = Calendar.current.date(byAdding: .day, value: -1, to: weton.dateMan) {
+                        weton.dateMan = updatedDate
+>>>>>>> parent of 9a98238 (add (dashboardView, disclaimerView, goodDateView, asset background) update (manview, womanview, tipsview, resultview, profileview, calendarview, data object, weton object))
                     }
                     .padding(.top, -100)
                 }
             }
+<<<<<<< HEAD
             
             //            Spacer()
             
@@ -92,6 +121,19 @@ struct ManView: View {
                     .foregroundColor(Color("textColor"))
             }
             .padding(.top, -80)
+=======
+            .padding(20)
+            Button {
+                isModal = true
+            } label: {
+                Text("Pick a date for \(profileType.text)")
+                    .padding(12)
+                    .frame(width: screenWidth * 0.8)
+                    .background(Color.blue)
+                    .cornerRadius(15)
+                    .foregroundColor(.white)
+            }
+>>>>>>> parent of 9a98238 (add (dashboardView, disclaimerView, goodDateView, asset background) update (manview, womanview, tipsview, resultview, profileview, calendarview, data object, weton object))
         }
         .foregroundColor(Color("textColor"))
         .sheet(isPresented: $isModal) {
@@ -106,6 +148,11 @@ struct ManView: View {
         .animation(.spring(), value: 0)
         .frame(width: screenWidth, height: screenHeight)
         .background(Color("quaternary"))
+<<<<<<< HEAD
+=======
+        
+        
+>>>>>>> parent of 9a98238 (add (dashboardView, disclaimerView, goodDateView, asset background) update (manview, womanview, tipsview, resultview, profileview, calendarview, data object, weton object))
     }
     
     struct ColorConstant {
