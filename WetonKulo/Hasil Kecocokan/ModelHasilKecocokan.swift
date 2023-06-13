@@ -18,8 +18,4 @@ struct Card : Identifiable {
 
 var weton = Weton()
  
-var cards = [
-    Card(weton: Weton(), id: 0, title111: "5 Siklus", imageName: "image0", title222: "\(weton.getFiveCycles().result)", title333: "\(weton.getFiveCycles().interpretation)"),
-    Card(weton: Weton(), id: 1, title111: "7 Siklus", imageName: "image1", title222: "\(weton.getSevenCycles().result)", title333: "\(weton.getSevenCycles().interpretation)"),
-    Card(weton: Weton(), id: 2, title111: "8 Siklus", imageName: "image2", title222: "\(weton.getEightCycles().result)", title333: "\(weton.getEightCycles().interpretation)"),
-             ]
+

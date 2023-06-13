@@ -29,7 +29,7 @@ struct DashboardView: View {
                     .animation(.easeInOut, value: activeView)
                 
             }
-            .background(Color("secondary"))
+            .background(Color("quaternary"))
             .ignoresSafeArea()
             .gesture(
                 

@@ -11,8 +11,6 @@ import SwiftUI
 struct WetonKuloApp: App {
     var body: some Scene {
         WindowGroup {
-            let weton = Weton()
-//            GoodDateView(weton: weton, profileType: .man)
             DashboardView()
         }
     }

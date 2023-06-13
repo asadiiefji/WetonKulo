@@ -20,6 +20,7 @@ struct DatabaseFiveCycle: Hashable, Identifiable {
     let result: String
     let interpretation: String
     let tips: String
+    let image: String
 }
 
 struct DatabaseSevenCycle: Hashable, Identifiable {
@@ -28,6 +29,7 @@ struct DatabaseSevenCycle: Hashable, Identifiable {
     let result: String
     let interpretation: String
     let tips: String
+    let image: String
 }
 
 struct DatabaseEightCycle: Hashable, Identifiable {
@@ -36,6 +38,7 @@ struct DatabaseEightCycle: Hashable, Identifiable {
     let result: String
     let interpretation: String
     let tips: String
+    let image: String
 }
 
 enum currentView {

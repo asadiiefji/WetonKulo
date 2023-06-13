@@ -15,7 +15,6 @@ struct OnBoardingAppView: View {
     
     var body: some View {
         NavigationStack{
-//            ScrollView {
                 VStack(spacing: 0){
                     
                     Group {
@@ -34,42 +33,38 @@ struct OnBoardingAppView: View {
                     
                     
                     Spacer()
-                    Image("imgTips")
+                    Image("logo")
                         .resizable()
-                        .frame(width: screenWidth * 0.8, height: screenWidth * 0.4)
+                        .frame(width: screenWidth * 0.8, height: screenWidth * 0.8)
                         .padding(.bottom, 20)
+                    Spacer()
                     Spacer()
                     NavigationLink(destination: {
                         OnBoardingView()
                     }, label: {
-                        Text("Kecocokan Pasangan")
+                        Text("Klik dan Isi Data Kelahiran untuk Menghitung Weton")
+                            .padding(.horizontal, 25)
                             .frame(width: screenWidth, height: screenHeight * 0.2)
                             .background(Color("quaternary"))
                             .foregroundColor(Color("textColor"))
-                            .font(.system(size: 24, weight: .semibold))
+                            .font(.system(size: 20, weight: .semibold))
                     })
                     
                     
-                    NavigationLink(destination: {
-                        OnBoardingView()
-                    }, label: {
-                        Text("Tanggal Baik Pernikahan")
-                            .frame(width: screenWidth, height: screenHeight * 0.2)
-                            .background(Color("secondary"))
-                            .foregroundColor(Color("textColor"))
-                            .font(.system(size: 24, weight: .semibold))
-                    })
-                    
-                    
+//                    NavigationLink(destination: {
+//                        OnBoardingView()
+//                    }, label: {
+//                        Text("Tanggal Baik Pernikahan")
+//                            .frame(width: screenWidth, height: screenHeight * 0.2)
+//                            .background(Color("secondary"))
+//                            .foregroundColor(Color("textColor"))
+//                            .font(.system(size: 24, weight: .semibold))
+//                    })
                 }
                 .frame(width: screenWidth, height: screenHeight, alignment: .bottom)
                 .background(Color("primary"))
                 
                 .ignoresSafeArea()
-    //            }
-    //            .frame(width: screenWidth, height: screenHeight)
-    //            .ignoresSafeArea()
-    //            .background(Color("secondary"))
         }
     }
 }

@@ -9,24 +9,61 @@ import SwiftUI
 
 
 struct HasilKecocokan: View {
-    
+    @ObservedObject var weton : Weton
     let categoryName: String
     @State private var isButtonTapped = false
+    @Environment(\.dismiss) private var dismiss
+    
     
     var body: some View {
         NavigationStack{
             ZStack {
-                //            Color.brown.edgesIgnoringSafeArea(.all)
+                
+                Button {
+                    dismiss()
+                } label: {
+//                        HStack(spacing: 0){
+                        Image(systemName: "chevron.backward.circle")
+                            .font(.system(size: 30, weight: .regular))
+//                            Text("Back")
+//                        }
+                    .foregroundColor(Color("tertiary"))
+                    
+                }
+                .position(x: 35, y: screenWidth - 255)
+                .zIndex(4)
+                
                 VStack{
-                    Text("Hasil Perhitungan")
+                    Text("Hasil Perhitungan ")
+                        .multilineTextAlignment(.center)
+                        .lineLimit(nil)
+                        .frame(width: screenWidth)
+                        .padding(.top, 120)
                         .font(.system(size: 26, weight: .bold))
                         .fontWeight(.bold)
                         .foregroundColor(Color("textColor"))
-                        .padding(EdgeInsets(top: 120, leading: 0, bottom: 20, trailing: 0))
+                        .frame(width: nil)
+                    Text("Kecocokan Pasangan")
+                        .multilineTextAlignment(.center)
+                        .lineLimit(nil)
+                        .frame(width: screenWidth)
+//                        .padding(.top, 1)
+                        .font(.system(size: 26, weight: .bold))
+                        .fontWeight(.bold)
+                        .foregroundColor(Color("textColor"))
+                        .frame(width: nil)
+                        
 //                    Spacer()
+//                    Text("total weton: \( weton.getTotalWeton())")
+//                        .foregroundColor(Color("textColor"))
                     ScrollView(.horizontal, showsIndicators: false) {
                         
                         HStack(alignment: .top, spacing: 70) {
+                            var cards = [
+                                Card(weton: Weton(), id: 0, title111: "Hasil Metode 5 Siklus", imageName: "\(weton.getFiveCycles().image)", title222: "\(weton.getFiveCycles().result)", title333: "\(weton.getFiveCycles().interpretation)"),
+                                Card(weton: Weton(), id: 1, title111: "Hasil Metode 7 Siklus", imageName: "\(weton.getSevenCycles().image)", title222: "\(weton.getSevenCycles().result)", title333: "\(weton.getSevenCycles().interpretation)"),
+                                Card(weton: Weton(), id: 2, title111: "Hasil Metode 8 Siklus", imageName: "\(weton.getEightCycles().image)", title222: "\(weton.getEightCycles().result)", title333: "\(weton.getEightCycles().interpretation)"),
+                                         ]
                             ForEach(cards) { num in
                                 GeometryReader { proxy in
                                     let scale = getScale(proxy: proxy)
@@ -56,6 +93,7 @@ struct HasilKecocokan: View {
                                                         .padding(EdgeInsets(top: 20, leading: 0, bottom: 10, trailing: 0))
                                                     
                                                     
+                                                    
                                                     Image(num.imageName)
                                                         .resizable()
                                                         .scaledToFit()
@@ -78,7 +116,7 @@ struct HasilKecocokan: View {
                                                     Text(num.title333)
                                                         .fontWeight(.light)
                                                         .foregroundColor(Color("textColor"))
-                                                        .multilineTextAlignment(.leading)
+                                                        .multilineTextAlignment(.center)
                                                         .font(.system(size: 12, weight: .semibold))
                                                         .frame(width: 240)
                                                         .padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
@@ -88,12 +126,6 @@ struct HasilKecocokan: View {
                                                 .background(Color.white)
                                                 .foregroundColor(Color("textColor"))
                                                 .cornerRadius(60)
-//                                                .overlay(
-//                                                    RoundedRectangle(cornerRadius: 40)
-//                                                        .stroke(Color(white: 1))
-//                                                )
-//                                                .shadow(radius: 2)
-//                                                .padding(25)
                                                 
                                             }
                                             
@@ -109,53 +141,51 @@ struct HasilKecocokan: View {
                                 } //End Geometry
                                 .frame(width: 160, height: 700)
                                 .padding(.horizontal, 48)
-                                .padding(.vertical, 60)
+                                .padding(.vertical, 50)
                             } //End ForEach
                             Spacer()
                                 .frame(width: 60)
                         }
                     }//End HStack
                 }
-                .padding(.top, 20)
+//                .padding(.top, 10)
                 
                 if isButtonTapped {
-                    NavigationLink(destination: {
-                        OnBoardingAppView().navigationBarBackButtonHidden(true)
-                        
-                    }, label: {
-                        Text("Menu")
-                            .font(.system(size: 18, weight: .semibold))
-                            .padding()
-                            .frame(width: screenWidth * 0.36)
-                            .background(Color("secondary"))
-                            .cornerRadius(20, corners: .allCorners)
-                            .foregroundColor(Color("textColor"))
-                    })
-                    .padding(20)
-                    .offset(x: -90, y: 360)
+                    
+                    
+                    HStack {
+                        Button(action: {
+                            dismiss()
+                            
+                        }, label: {
+                            Text("Menu")
+                                .font(.system(size: 18, weight: .semibold))
+                                .padding()
+                                .frame(width: screenWidth * 0.36)
+                                .background(Color("secondary"))
+                                .cornerRadius(20, corners: .allCorners)
+                                .foregroundColor(Color("textColor"))
+                        })
+                        .padding(.horizontal, 10)
+                        NavigationLink(destination: {
+                            TipsView(weton: weton)
+    //                            .navigationBarBackButtonHidden(true)
+                        }, label: {
+                            Text("Tips")
+                                .font(.system(size: 18, weight: .semibold))
+                                .padding()
+                                .frame(width: screenWidth * 0.36)
+                                .background(Color("secondary"))
+                                .cornerRadius(20, corners: .allCorners)
+                                .foregroundColor(Color("textColor"))
+                        })
+                    }.position(x: screenWidth/2, y:screenHeight)
                 }
                 
-                if isButtonTapped {
-                    NavigationLink(destination: {
-                        TipsView(weton: weton).navigationBarBackButtonHidden(true)
-                    }, label: {
-                        Text("Tips")
-                            .font(.system(size: 18, weight: .semibold))
-                            .padding()
-                            .frame(width: screenWidth * 0.36)
-                            .background(Color("secondary"))
-                            .cornerRadius(20, corners: .allCorners)
-                            .foregroundColor(Color("textColor"))
-                    })
-                    .padding(20)
-                    .offset(x: 90, y: 360)
-                }
-                
-                // End ScrollView
             }
             .background(Color("primary"))
         }
-        
+        .navigationBarBackButtonHidden(true)
         
         .onAppear {
             isButtonTapped = true
@@ -185,6 +215,7 @@ struct HasilKecocokan: View {
 
 struct HasilKecocokan_Previews: PreviewProvider {
     static var previews: some View {
-        HasilKecocokan(categoryName: "Hasil Kecocokan")
+        let weton = Weton()
+        HasilKecocokan(weton: weton, categoryName: "Hasil Kecocokan")
     }
 }

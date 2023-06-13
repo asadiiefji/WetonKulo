@@ -23,7 +23,7 @@ struct WomanView: View {
         VStack {
             
             Group {
-                Text("Informasi Weton")
+                Text("Kembali")
                     .padding(.top, 50)
                     .font(.system(size: 16, weight: .semibold))
                 Image(systemName: "chevron.down")
@@ -35,10 +35,18 @@ struct WomanView: View {
             }
             .foregroundColor(Color("tertiary"))
             Spacer()
-            
+//            Text("total weton: \( weton.getWetonWoman())")
+//                .foregroundColor(Color.white)
             Toggle(isOn: $weton.isMaghribWoman ) {
                 Text("Lahir setelah maghrib?")
+                    .font(.system(size: 18, weight: .semibold))
+                    .foregroundColor(Color("tertiary"))
             }
+            .padding(.vertical, 10)
+            .padding(.horizontal, 15)
+            .frame(width: screenWidth * 0.8)
+            .background(Color("primary").opacity(0.6))
+            .cornerRadius(30, corners: .allCorners)
             .onChange(of: weton.isMaghribWoman ) { newValue in
                 
                 if newValue {
@@ -72,7 +80,7 @@ struct WomanView: View {
                     .font(.system(size: 18, weight: .semibold))
                     .padding(15)
                     .frame(width: screenWidth * 0.8)
-                    .background(Color("primary").opacity(0.4))
+                    .background(Color("primary").opacity(0.6))
                     .cornerRadius(30, corners: .allCorners)
                     .foregroundColor(Color("tertiary"))
             }
