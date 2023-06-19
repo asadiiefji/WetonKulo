@@ -17,11 +17,89 @@ struct ManView: View {
     
     let profileType: ProfileType
     
+    // Declare a state variable to store the user input
+    var selectedDate: Binding<Date> {
+            Binding<Date>(
+                get: {
+                    if profileType.isMan {
+                        return weton.dateMan
+                    } else {
+                        return weton.dateWoman
+                    }
+                },
+                set: { newValue in
+                    if profileType.isMan {
+                        weton.dateMan = newValue
+                    } else {
+                        weton.dateWoman = newValue
+                    }
+                }
+            )
+        }
+    
+    // Declare a DateFormatter to parse the user input
+    private var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy" // Customize the date format as per your requirements
+        return formatter
+    }
+    
     var body: some View {
         
         VStack {
-//            Text("total weton: \( weton.getWetonMan())")
-//                .foregroundColor(Color("textColor"))
+            HStack {
+                Spacer()
+                Button {
+                    isAlert = true
+                } label: {
+                    Image(systemName: "info.circle.fill")
+                        .font(.system(size: 26, weight: .bold))
+                        .foregroundColor(Color("tertiary"))
+                }
+            
+            }
+            .padding(.trailing, 40)
+            .padding(.top, 50)
+            Text("date: \( weton.dateMan, formatter: dateFormatter), total weton: \( weton.getWetonMan())")
+                .font(.title3)
+                .foregroundColor(.white)
+                .font(.title)
+                            .foregroundColor(Color("tertiary"))
+//                            .padding(.bottom, 350)
+            
+            Spacer()
+            TextField("Select a date", value: selectedDate, formatter: dateFormatter)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding(.vertical, 10)
+                .padding(.horizontal, 20)
+                .onChange(of: selectedDate.wrappedValue) { newValue in
+                    if profileType.isMan {
+                        weton.fullDateMan = newValue
+                        weton.dayMan = newValue
+                    } else {
+                        weton.fullDateWoman = newValue
+                        weton.dayWoman = newValue
+                    }
+                }
+            
+            DateTextField(date: $weton.dateMan)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .background(Color.blue)
+                .padding(.vertical, 10)
+                .padding(.horizontal, 20)
+            
+            Button {
+                isModal = true
+            } label: {
+                Text( (weton.dateMan.description.components(separatedBy: " ")[0] != weton.currentDateMan.description.components(separatedBy: " ")[0]) ? "\(weton.dateMan, formatter: dateFormatter)" : "Tanggal Lahir \(profileType.text)")
+                    .font(.system(size: 18, weight: .semibold))
+                    .padding(15)
+                    .frame(width: screenWidth * 0.8)
+                    .background(Color("primary").opacity(0.6))
+                    .cornerRadius(30, corners: .allCorners)
+                    .foregroundColor(Color("tertiary"))
+            }
+            
             Toggle(isOn: $weton.isMaghribMan ) {
                 Text("Lahir setelah maghrib?")
                     .font(.system(size: 18, weight: .semibold))
@@ -34,14 +112,15 @@ struct ManView: View {
             .cornerRadius(30, corners: .allCorners)
             .onChange(of: weton.isMaghribMan ) { newValue in
                 if newValue {
-                    isAlert = true
+//                    isAlert = true
                     if let updatedDate = Calendar.current.date(byAdding: .day, value: 1, to: weton.dateMan) {
                         weton.dateMan = updatedDate
                         weton.currentDateMan = Calendar.current.date(byAdding: .day, value: 1, to: weton.currentDateMan)!
+                        
                     }
                 }
                 else {
-                    isAlert = false
+//                    isAlert = false
                     if let updatedDate = Calendar.current.date(byAdding: .day, value: -1, to: weton.dateMan) {
                         weton.dateMan = updatedDate
                         weton.currentDateMan = Calendar.current.date(byAdding: .day, value: -1, to: weton.currentDateMan)!
@@ -57,20 +136,7 @@ struct ManView: View {
                 )
             }
             
-            Button {
-                isModal = true
-                print(weton.dateMan)
-                print(type(of: Date()))
-                print(Date())
-            } label: {
-                Text( (weton.dateMan.description.components(separatedBy: " ")[0] != weton.currentDateMan.description.components(separatedBy: " ")[0]) ? "\(weton.dateMan, formatter: dateFormatter)" : "Tanggal Lahir \(profileType.text)")
-                    .font(.system(size: 18, weight: .semibold))
-                    .padding(15)
-                    .frame(width: screenWidth * 0.8)
-                    .background(Color("primary").opacity(0.6))
-                    .cornerRadius(30, corners: .allCorners)
-                    .foregroundColor(Color("tertiary"))
-            }
+            
             
             Image(systemName: "chevron.up")
                 .font(.system(size: 20, weight: .semibold))
@@ -90,7 +156,7 @@ struct ManView: View {
         .foregroundColor(Color("textColor"))
         .sheet(isPresented: $isModal) {
             CalendarView(weton: weton, profileType: profileType)
-                .presentationDetents([.fraction(0.6)])
+                .presentationDetents([.fraction(0.4)])
                 .transition(.move(edge: .bottom))
                 .animation(.easeInOut, value: 10)
                 .presentationCornerRadius(40)

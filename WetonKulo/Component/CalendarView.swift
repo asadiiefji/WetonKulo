@@ -24,7 +24,7 @@ struct CalendarView: View {
                     .font(.system(size: 36, weight: .regular))
                     .foregroundColor(Color("tertiary"))
             }
-            .position(x: 40, y: 70)
+            .position(x: 40, y: 60)
             .zIndex(2)
             
             
@@ -45,15 +45,22 @@ struct CalendarView: View {
                             weton.dayWoman = weton.dateWoman
                         }
                     }
-                    .datePickerStyle(GraphicalDatePickerStyle())
+                    .datePickerStyle(WheelDatePickerStyle())
+                    .labelsHidden()
                     .accentColor(Color("tertiary"))
                     .padding(.vertical, 10)
                     .padding(.horizontal, 20)
+//                    .onAppear {
+//                            let dateFormatter = DateFormatter()
+//                            dateFormatter.dateFormat = "yyyy MM dd"
+//                            weton.dateMan = dateFormatter.string(from: weton.dateMan)
+//                            weton.dateWoman = dateFormatter.string(from: weton.dateWoman)
+//                        }
                 
                 //            Text("weton pria: \(weton.getWetonMan())")
                 //            Text("weton wanita: \(weton.getWetonWoman())")
             }
-            .frame(width: screenWidth, height: screenHeight * 0.6)
+            .frame(width: screenWidth, height: screenHeight * 0.4)
             .background(Color("secondary"))
         }
         

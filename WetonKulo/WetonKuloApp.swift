@@ -11,6 +11,9 @@ import SwiftUI
 struct WetonKuloApp: App {
     var body: some Scene {
         WindowGroup {
+//            @State var currentDate = Date()
+//            CalendarGoodDateView(currentDate: $currentDate)
+//            ContentView()
             DashboardView()
         }
     }

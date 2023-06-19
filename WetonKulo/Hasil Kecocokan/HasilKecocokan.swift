@@ -39,8 +39,7 @@ struct HasilKecocokan: View {
                         .lineLimit(nil)
                         .frame(width: screenWidth)
                         .padding(.top, 120)
-                        .font(.system(size: 26, weight: .bold))
-                        .fontWeight(.bold)
+                        .font(.system(size: 24, weight: .semibold))
                         .foregroundColor(Color("textColor"))
                         .frame(width: nil)
                     Text("Kecocokan Pasangan")
@@ -48,8 +47,7 @@ struct HasilKecocokan: View {
                         .lineLimit(nil)
                         .frame(width: screenWidth)
 //                        .padding(.top, 1)
-                        .font(.system(size: 26, weight: .bold))
-                        .fontWeight(.bold)
+                        .font(.system(size: 24, weight: .semibold))
                         .foregroundColor(Color("textColor"))
                         .frame(width: nil)
                         
@@ -60,9 +58,9 @@ struct HasilKecocokan: View {
                         
                         HStack(alignment: .top, spacing: 70) {
                             var cards = [
-                                Card(weton: Weton(), id: 0, title111: "Hasil Metode 5 Siklus", imageName: "\(weton.getFiveCycles().image)", title222: "\(weton.getFiveCycles().result)", title333: "\(weton.getFiveCycles().interpretation)"),
-                                Card(weton: Weton(), id: 1, title111: "Hasil Metode 7 Siklus", imageName: "\(weton.getSevenCycles().image)", title222: "\(weton.getSevenCycles().result)", title333: "\(weton.getSevenCycles().interpretation)"),
-                                Card(weton: Weton(), id: 2, title111: "Hasil Metode 8 Siklus", imageName: "\(weton.getEightCycles().image)", title222: "\(weton.getEightCycles().result)", title333: "\(weton.getEightCycles().interpretation)"),
+                                Card(weton: Weton(), id: 0, title111: "Aspek Rumah Tangga", imageName: "\(weton.getFiveCycles().image)", title222: "\(weton.getFiveCycles().result)", title333: "\(weton.getFiveCycles().interpretation)"),
+                                Card(weton: Weton(), id: 1, title111: "Aspek Rezeki", imageName: "\(weton.getSevenCycles().image)", title222: "\(weton.getSevenCycles().result)", title333: "\(weton.getSevenCycles().interpretation)"),
+                                Card(weton: Weton(), id: 2, title111: "Aspek Kesehatan", imageName: "\(weton.getEightCycles().image)", title222: "\(weton.getEightCycles().result)", title333: "\(weton.getEightCycles().interpretation)"),
                                          ]
                             ForEach(cards) { num in
                                 GeometryReader { proxy in
@@ -86,7 +84,7 @@ struct HasilKecocokan: View {
                                                 VStack(spacing: 0) {
                                                     
                                                     Text(num.title111)
-                                                        .font(.system(size: 20, weight: .semibold))
+                                                        .font(.system(size: 18, weight: .regular))
                                                         .fontWeight(.semibold)
                                                         .multilineTextAlignment(.center)
                                                         .foregroundColor(Color("textColor"))

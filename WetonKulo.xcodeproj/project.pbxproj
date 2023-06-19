@@ -33,6 +33,12 @@
 		437637A72A370CDF00E7E92A /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437637A52A370CDF00E7E92A /* DashboardView.swift */; };
 		437637A82A370CDF00E7E92A /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437637A62A370CDF00E7E92A /* DisclaimerView.swift */; };
 		437637AF2A370DC400E7E92A /* GoodDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437637AE2A370DC400E7E92A /* GoodDateView.swift */; };
+		43B6ED442A3E00D2003AC06C /* MarriageDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B6ED432A3E00D2003AC06C /* MarriageDateView.swift */; };
+		43B6ED472A3E0797003AC06C /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B6ED462A3E0797003AC06C /* DateValue.swift */; };
+		43B6ED492A3EFC9B003AC06C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B6ED482A3EFC9B003AC06C /* Task.swift */; };
+		43B6ED4C2A3F5C48003AC06C /* MarriageCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B6ED4B2A3F5C48003AC06C /* MarriageCalendarView.swift */; };
+		43B6ED4E2A3F6C8A003AC06C /* DateField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B6ED4D2A3F6C8A003AC06C /* DateField.swift */; };
+		43D833082A3A130900FBB53B /* CalendarGoodDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D833072A3A130900FBB53B /* CalendarGoodDateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +88,12 @@
 		437637A52A370CDF00E7E92A /* DashboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		437637A62A370CDF00E7E92A /* DisclaimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisclaimerView.swift; sourceTree = "<group>"; };
 		437637AE2A370DC400E7E92A /* GoodDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodDateView.swift; sourceTree = "<group>"; };
+		43B6ED432A3E00D2003AC06C /* MarriageDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarriageDateView.swift; sourceTree = "<group>"; };
+		43B6ED462A3E0797003AC06C /* DateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
+		43B6ED482A3EFC9B003AC06C /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		43B6ED4B2A3F5C48003AC06C /* MarriageCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarriageCalendarView.swift; sourceTree = "<group>"; };
+		43B6ED4D2A3F6C8A003AC06C /* DateField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateField.swift; sourceTree = "<group>"; };
+		43D833072A3A130900FBB53B /* CalendarGoodDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarGoodDateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,10 +166,12 @@
 			children = (
 				4373B3572A3061F200600475 /* WetonKuloApp.swift */,
 				4373B3592A3061F200600475 /* ContentView.swift */,
+				43B6ED4A2A3F5BFE003AC06C /* GoodDateMarriage */,
 				437637AD2A370DA000E7E92A /* GoodDate */,
 				432347E62A3472CE00373BBC /* OnBoarding */,
 				4373B38A2A30BBEE00600475 /* CompatibilityCalculation */,
 				309EB80A2A36FCA700B02C8A /* Hasil Kecocokan */,
+				43B6ED452A3E0781003AC06C /* Model */,
 				4373B3832A3062AF00600475 /* Object */,
 				4373B3822A30628D00600475 /* Helper */,
 				4373B3812A30621400600475 /* Component */,
@@ -213,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				4373B3862A3063EF00600475 /* Weton.swift */,
+				43B6ED4D2A3F6C8A003AC06C /* DateField.swift */,
 				4373B3882A30641600600475 /* JavaneseDate.swift */,
 				4373B38F2A30BC6300600475 /* ProfileType.swift */,
 				432347D82A331E6B00373BBC /* Data.swift */,
@@ -236,8 +251,27 @@
 			isa = PBXGroup;
 			children = (
 				437637AE2A370DC400E7E92A /* GoodDateView.swift */,
+				43B6ED432A3E00D2003AC06C /* MarriageDateView.swift */,
+				43D833072A3A130900FBB53B /* CalendarGoodDateView.swift */,
 			);
 			path = GoodDate;
+			sourceTree = "<group>";
+		};
+		43B6ED452A3E0781003AC06C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				43B6ED462A3E0797003AC06C /* DateValue.swift */,
+				43B6ED482A3EFC9B003AC06C /* Task.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		43B6ED4A2A3F5BFE003AC06C /* GoodDateMarriage */ = {
+			isa = PBXGroup;
+			children = (
+				43B6ED4B2A3F5C48003AC06C /* MarriageCalendarView.swift */,
+			);
+			path = GoodDateMarriage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,23 +406,29 @@
 			files = (
 				309EB80C2A36FCDE00B02C8A /* HasilKecocokan.swift in Sources */,
 				4373B35A2A3061F200600475 /* ContentView.swift in Sources */,
+				43B6ED4C2A3F5C48003AC06C /* MarriageCalendarView.swift in Sources */,
 				432347E82A3472E400373BBC /* OnBoardingAppView.swift in Sources */,
 				4373B3852A3062D400600475 /* Helpers.swift in Sources */,
 				309EB8102A36FD0800B02C8A /* ModelDetailView.swift in Sources */,
+				43B6ED4E2A3F6C8A003AC06C /* DateField.swift in Sources */,
 				437637A82A370CDF00E7E92A /* DisclaimerView.swift in Sources */,
 				437637AF2A370DC400E7E92A /* GoodDateView.swift in Sources */,
 				4373B3582A3061F200600475 /* WetonKuloApp.swift in Sources */,
 				4373B38C2A30BC2900600475 /* OnBoardingView.swift in Sources */,
 				432347E32A3352F300373BBC /* TipsView.swift in Sources */,
+				43B6ED442A3E00D2003AC06C /* MarriageDateView.swift in Sources */,
 				432347D92A331E6B00373BBC /* Data.swift in Sources */,
+				43B6ED492A3EFC9B003AC06C /* Task.swift in Sources */,
 				4373B3892A30641600600475 /* JavaneseDate.swift in Sources */,
 				432347DD2A331F4300373BBC /* WomanView.swift in Sources */,
 				4373B3922A30BD1600600475 /* CalendarView.swift in Sources */,
 				432347DB2A331F1400373BBC /* ManView.swift in Sources */,
 				309EB80E2A36FCF200B02C8A /* ModelHasilKecocokan.swift in Sources */,
 				437637A72A370CDF00E7E92A /* DashboardView.swift in Sources */,
+				43D833082A3A130900FBB53B /* CalendarGoodDateView.swift in Sources */,
 				4373B38E2A30BC3700600475 /* ProfileView.swift in Sources */,
 				4373B3872A3063EF00600475 /* Weton.swift in Sources */,
+				43B6ED472A3E0797003AC06C /* DateValue.swift in Sources */,
 				4373B3902A30BC6300600475 /* ProfileType.swift in Sources */,
 				432347E52A3461E600373BBC /* DisclosureGroupView.swift in Sources */,
 			);

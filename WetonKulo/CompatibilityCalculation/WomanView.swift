@@ -22,21 +22,58 @@ struct WomanView: View {
         
         VStack {
             
-            Group {
-                Text("Kembali")
-                    .padding(.top, 50)
-                    .font(.system(size: 16, weight: .semibold))
-                Image(systemName: "chevron.down")
-                    .font(.system(size: 20, weight: .semibold))
-                Image(systemName: "chevron.down")
-                    .font(.system(size: 20, weight: .semibold))
-                    .padding(.top, 5)
-                    .foregroundColor(Color("secondary"))
-            }
-            .foregroundColor(Color("tertiary"))
+            
+            
+            ZStack {
+                
+                VStack {
+                    Group {
+                        Text("Kembali")
+                            
+                            .font(.system(size: 16, weight: .semibold))
+                        Image(systemName: "chevron.down")
+                            .font(.system(size: 20, weight: .semibold))
+                        Image(systemName: "chevron.down")
+                            .font(.system(size: 20, weight: .semibold))
+                            .padding(.top, 5)
+                            .foregroundColor(Color("secondary"))
+                    }
+                    .foregroundColor(Color("tertiary"))
+                }
+                
+                Spacer()
+                
+                HStack {
+                    Spacer()
+                    Button {
+                        isAlert = true
+                    } label: {
+                        Image(systemName: "info.circle.fill")
+                            .font(.system(size: 26, weight: .bold))
+                            .foregroundColor(Color("tertiary"))
+                    }
+                
+                }
+                .padding(.trailing, 40)
+                
+            }.padding(.top, 50)
+            
             Spacer()
 //            Text("total weton: \( weton.getWetonWoman())")
 //                .foregroundColor(Color.white)
+            
+            Button {
+                isModal = true
+            } label: {
+                Text( (weton.dateWoman.description.components(separatedBy: " ")[0] != weton.currentDateWoman.description.components(separatedBy: " ")[0]) ? "\(weton.dateWoman, formatter: dateFormatter)" : "Tanggal Lahir \(profileType.text)")
+                    .font(.system(size: 18, weight: .semibold))
+                    .padding(15)
+                    .frame(width: screenWidth * 0.8)
+                    .background(Color("primary").opacity(0.6))
+                    .cornerRadius(30, corners: .allCorners)
+                    .foregroundColor(Color("tertiary"))
+            }
+            
             Toggle(isOn: $weton.isMaghribWoman ) {
                 Text("Lahir setelah maghrib?")
                     .font(.system(size: 18, weight: .semibold))
@@ -50,14 +87,14 @@ struct WomanView: View {
             .onChange(of: weton.isMaghribWoman ) { newValue in
                 
                 if newValue {
-                    isAlert = true
+//                    isAlert = true
                     if let updatedDate = Calendar.current.date(byAdding: .day, value: 1, to: weton.dateWoman) {
                         weton.dateWoman = updatedDate
                         weton.currentDateWoman = Calendar.current.date(byAdding: .day, value: 1, to: weton.currentDateWoman)!
                     }
                 }
                 else {
-                    isAlert = false
+//                    isAlert = false
                     if let updatedDate = Calendar.current.date(byAdding: .day, value: -1, to: weton.dateWoman) {
                         weton.dateWoman = updatedDate
                         weton.currentDateWoman = Calendar.current.date(byAdding: .day, value: -1, to: weton.currentDateWoman)!
@@ -65,7 +102,7 @@ struct WomanView: View {
                 }
             }
             .padding(20)
-            
+            .padding(.bottom, 35)
             .alert(isPresented: $isAlert) {
                 Alert(
                     title: Text("Informasi"),
@@ -73,32 +110,9 @@ struct WomanView: View {
                 )
             }
             
-            Button {
-                isModal = true
-            } label: {
-                Text( (weton.dateWoman.description.components(separatedBy: " ")[0] != weton.currentDateWoman.description.components(separatedBy: " ")[0]) ? "\(weton.dateWoman, formatter: dateFormatter)" : "Tanggal Lahir \(profileType.text)")
-                    .font(.system(size: 18, weight: .semibold))
-                    .padding(15)
-                    .frame(width: screenWidth * 0.8)
-                    .background(Color("primary").opacity(0.6))
-                    .cornerRadius(30, corners: .allCorners)
-                    .foregroundColor(Color("tertiary"))
-            }
-            .padding(.bottom, 105)
             
-//            Image(systemName: "chevron.up")
-//                .font(.system(size: 20, weight: .semibold))
-//                .padding(.top, 10)
-//                .foregroundColor((weton.isMaghribWoman == true) ? Color("tertiary") : Color("secondary"))
-//            Image(systemName: "chevron.up")
-//                .font(.system(size: 20, weight: .semibold))
-//                .padding(.top, 5)
-//                .foregroundColor((weton.isMaghribWoman == true) ? Color("secondary") : Color("tertiary"))
-//            Text("Kembali")
-//                .padding(.top, 5)
-//                .font(.system(size: 20, weight: .semibold))
-//                .padding(.bottom, 30)
-//                .foregroundColor((weton.isMaghribWoman == true) ? Color("secondary").opacity(0.8) : Color("secondary"))
+            
+            
         }
         .foregroundColor(Color("textColor"))
         .sheet(isPresented: $isModal) {

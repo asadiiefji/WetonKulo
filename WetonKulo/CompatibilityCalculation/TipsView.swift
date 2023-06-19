@@ -37,7 +37,7 @@ struct TipsView: View {
                 ScrollView(showsIndicators: false){
                     VStack{
                         Text("Tips")
-                            .font(.system(size: 26, weight: .bold))
+                            .font(.system(size: 24, weight: .semibold))
                             .padding(EdgeInsets(top: 60, leading: 0, bottom: 30, trailing: 0))
                             .foregroundColor(Color("textColor"))
                         

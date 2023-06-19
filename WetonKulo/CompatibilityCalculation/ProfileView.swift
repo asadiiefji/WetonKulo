@@ -50,11 +50,16 @@ struct ProfileView: View {
                                 Image(systemName: "chevron.down")
                                     .font(.system(size: 28, weight: .semibold))
                                     .foregroundColor((weton.isMaghribMan == true) ? Color("tertiary") : Color("secondary"))
+                                    .offset(x: 0, y: offsetY2)
+                                
                                 Image(systemName: "chevron.down")
                                     .font(.system(size: 28, weight: .semibold))
                                     .padding(.top, 5)
                                     .foregroundColor((weton.isMaghribMan == true) ? Color("secondary") : Color("tertiary"))
+                                
+                                
                             }
+                            .offset(x: 0, y: offsetY1)
                             
                             
                         }
@@ -72,6 +77,7 @@ struct ProfileView: View {
                                     .padding(.top, 5)
                                     .foregroundColor((weton.isMaghribMan == true) ? Color("secondary") : Color("tertiary"))
                             }
+                            .offset(x: 0, y: offsetY2)
                             
                             Text("Swipe up")
                                 .font(.system(size: 20, weight: .regular))
@@ -83,7 +89,11 @@ struct ProfileView: View {
                         .frame(width: screenWidth, height: screenHeight * 0.1)
                         
                         
-                    }.zIndex(3)
+                    }
+                    .onAppear {
+//                        startAnimation()
+                    }
+                    .zIndex(3)
                     
                     VStack {
                         Text( (weton.dateMan.description.components(separatedBy: " ")[0] != weton.currentDateMan.description.components(separatedBy: " ")[0] && weton.dateWoman.description.components(separatedBy: " ")[0] != weton.currentDateWoman.description.components(separatedBy: " ")[0]) ? "" : "Data Kelahiran \( (weton.dateMan.description.components(separatedBy: " ")[0] != weton.currentDateMan.description.components(separatedBy: " ")[0]  ) ? "" : "Pria" ) \( (weton.dateWoman.description.components(separatedBy: " ")[0] != weton.currentDateWoman.description.components(separatedBy: " ")[0]  ) ? "" : "Wanita" ) Belum Berisi")
@@ -171,15 +181,6 @@ struct ProfileView: View {
             .ignoresSafeArea()
             
             .navigationBarBackButtonHidden(true)
-//            .navigationBarItems(leading: BackView())
-//            .navigationBarBackButtonHidden(true); label: do {
-//                Text("< Hasil")
-//                    .font(.title3)
-//
-//                    .fontWeight(.semibold)
-//                    .foregroundColor(Color("textColor"))
-//                    .cornerRadius(20, corners: .allCorners)
-//            }
         }
         
         

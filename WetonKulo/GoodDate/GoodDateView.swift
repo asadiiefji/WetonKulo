@@ -32,7 +32,7 @@ struct GoodDateView: View {
                 ZStack {
                     
                     Text("Hasil Perhitungan Tanggal Baik")
-                            .font(.system(size: 26, weight: .bold))
+                        .font(.system(size: 24, weight: .semibold))
                             .padding(.horizontal, 40)
                             .multilineTextAlignment(.center)
                         
@@ -60,7 +60,7 @@ struct GoodDateView: View {
                             Image(systemName: "info.bubble.fill")
                                 .font(.system(size: 22, weight: .bold))
                                 .foregroundColor(Color(containsTuesdayKliwon ? "secondary" : "merah"))
-                    }
+                        }
                         .padding(.trailing, 25)
                     }
                     .padding(.horizontal, 20)
